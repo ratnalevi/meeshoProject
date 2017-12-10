@@ -7,8 +7,6 @@ require_once( SERVER_PATH . '/helpers/DataValidator.php');
 class OrderController extends HTTPResponse {
 
 	function addOrder() {	
-
-		$orderID = isset( $_GET['id'] ) ? $_GET['id'] : '';
 	    
 	    $data = $_POST['data'];
 
@@ -19,7 +17,7 @@ class OrderController extends HTTPResponse {
 	    	$statusCode = 400;
 	    	$rawData = array('error' => 'Data not valid', 'message' => $errors);
 	    }else{
-	    	if( Queue::addMessage($orderID, $data) ) {
+	    	if( Queue::addMessage($data['orderId'], $data) ) {
 				$statusCode = 200;
 				$rawData = array('success' => 'Data added to Queue');
 			} else {

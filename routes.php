@@ -26,7 +26,10 @@ switch($action){
 		
 		break;
 	case "" :
-		//404 - not found;
+		$response = new HTTPResponse();
+	    header('HTTP/1.1 404 NOT FOUND');
+	    echo $response->getHTMLResponse(400);
+	    break;
 		break;
 }
 

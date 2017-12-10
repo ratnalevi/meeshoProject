@@ -1,9 +1,10 @@
 <?php
 
 # Create a connection
-$url = 'http://meesho.com/routes.php?action=add&id=2';
+$orderId = 123445;
+$url = 'http://meesho.com/routes.php?action=add';
 $data = [ "data" => [
-			'orderId' => 123,
+			'orderId' => $orderId,
 	        'requestType' => 'email',
 	        'recepient' => 'ratnalevi@gmail.com',
 	        'subject' => 'Test Subject',
