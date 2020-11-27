@@ -1,5 +1,5 @@
 # meeshoProject
-Test project to implement rest API and client for it
+Test project to implement rest API and client for its
 Message Queues and its worker.
 
 The repository has five different folders
